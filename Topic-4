@@ -1,0 +1,18 @@
+pragma solidity ^0.8.0;
+
+contract employeeDetails{
+    struct employeeDetails{
+        string empname;
+        uint empid;
+    }
+
+    mapping(uint => employeedetails) _employee;
+
+    function setemployeedetails(string memory _empname, uint _empid, uint _deptid)public {
+        _employee[_empid] = employeedetails(_empname,_deptid);
+    }
+
+    function getemployeedetails(uint _deptid) public view returns(string memory _empname, uint _empid){
+        return(_employee[_empid].name, _employee[_deptid].empid);
+    } 
+}
